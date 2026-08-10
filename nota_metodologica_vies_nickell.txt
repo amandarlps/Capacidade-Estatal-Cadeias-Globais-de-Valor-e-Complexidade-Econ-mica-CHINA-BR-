@@ -1,0 +1,23 @@
+================================================================================
+NOTA METODOLÓGICA: TRATAMENTO DO VIÉS DE NICKELL EM MODELOS DINÂMICOS AR(1)
+================================================================================
+1. CONTEXTO DO VIÉS DE NICKELL O(1/T):
+   A inclusão da variável dependente defasada (gvc_fwd_l1) no estimador de Efeitos Fixos
+   (Within) introduz o viés de Nickell (1981), derivado da correlação mecânica entre
+   Y_{i,t-1} e o termo de erro centrado \bar{\varepsilon}_i.
+
+2. JUSTIFICATIVA BASEADA NA ASSINTÓTICA DE T (T_médio ≈ 27):
+   O viés de Nickell é inversamente proporcional a T, ou seja, O(1/T). Com uma extensão
+   temporal média de aproximadamente T ≈ 28 anos na base corrente, o viés assintótico
+   é assintoticamente atenuado para < 3.5%, tornando-se negligenciável diante dos erros
+   de amostragem padrão.
+
+3. TRADE-OFF CONTRA ESTIMADORES GMM (ARELLANO-BOND / BLUNDELL-BOND):
+   Em painéis com T > 20, estimadores GMM em diferenças ou sistêmico sofrem com o severo
+   problema de 'proliferação de instrumentos' (too many instruments), o que reduz o poder
+   dos testes de sobreidentificação de Hansen/Sargan e causa viés de superajuste.
+   A literatura econométrica (Roodman, 2009; Judson & Owen, 1999) indica que o estimador
+   Within (FE) combinado com erros-padrão de Driscoll-Kraay (vcov = 'DK') produz estimativas
+   mais consistentes e robustas à dependência transversal e autocorrelação para T >= 20.
+================================================================================
+

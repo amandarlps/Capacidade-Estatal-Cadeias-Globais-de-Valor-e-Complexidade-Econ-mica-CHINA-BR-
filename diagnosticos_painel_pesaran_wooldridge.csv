@@ -1,0 +1,3 @@
+Teste,Estatistica,p_valor,Conclusao
+Pesaran CD (Dependência Transversal),4.972650708512973,6.60435922526725e-7,Rejeita H0 (Existe Dependência Transversal -> Erros Driscoll-Kraay Exigidos)
+Wooldridge (Autocorrelação Serial),1283.3396543200226,9.417452969279713e-165,Rejeita H0 (Existe Autocorrelação -> Erros Robustos Exigidos)
